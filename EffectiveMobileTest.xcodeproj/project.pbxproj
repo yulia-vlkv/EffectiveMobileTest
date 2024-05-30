@@ -11,6 +11,13 @@
 		EF2D69DB2C073D4800959D73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D69DA2C073D4800959D73 /* ContentView.swift */; };
 		EF2D69DD2C073D4B00959D73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2D69DC2C073D4B00959D73 /* Assets.xcassets */; };
 		EF2D69E02C073D4B00959D73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2D69DF2C073D4B00959D73 /* Preview Assets.xcassets */; };
+		EF2D69E72C08438600959D73 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D69E62C08438600959D73 /* MainView.swift */; };
+		EF2D69EF2C084F4A00959D73 /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D69EE2C084F4A00959D73 /* FontStyles.swift */; };
+		EF2D69FD2C08580500959D73 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D69FC2C08580500959D73 /* Coordinator.swift */; };
+		EF2D69FF2C085DAA00959D73 /* AviaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D69FE2C085DAA00959D73 /* AviaView.swift */; };
+		EF2D6A012C085E2A00959D73 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D6A002C085E2A00959D73 /* CustomTextField.swift */; };
+		EF2D6A032C08619000959D73 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D6A022C08619000959D73 /* PlaceholderView.swift */; };
+		EF2D6A052C0861D000959D73 /* ModalSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D6A042C0861D000959D73 /* ModalSearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,13 @@
 		EF2D69DA2C073D4800959D73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF2D69DC2C073D4B00959D73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF2D69DF2C073D4B00959D73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EF2D69E62C08438600959D73 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		EF2D69EE2C084F4A00959D73 /* FontStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyles.swift; sourceTree = "<group>"; };
+		EF2D69FC2C08580500959D73 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		EF2D69FE2C085DAA00959D73 /* AviaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AviaView.swift; sourceTree = "<group>"; };
+		EF2D6A002C085E2A00959D73 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		EF2D6A022C08619000959D73 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		EF2D6A042C0861D000959D73 /* ModalSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +65,11 @@
 		EF2D69D72C073D4800959D73 /* EffectiveMobileTest */ = {
 			isa = PBXGroup;
 			children = (
+				EF2D69FB2C0857EF00959D73 /* Coordinator */,
 				EF2D69D82C073D4800959D73 /* EffectiveMobileTestApp.swift */,
-				EF2D69DA2C073D4800959D73 /* ContentView.swift */,
+				EF2D69FA2C08548E00959D73 /* Views */,
+				EF2D69F02C0851C000959D73 /* Component */,
+				EF2D69F12C0851D600959D73 /* Utility */,
 				EF2D69DC2C073D4B00959D73 /* Assets.xcassets */,
 				EF2D69DE2C073D4B00959D73 /* Preview Content */,
 			);
@@ -65,6 +82,42 @@
 				EF2D69DF2C073D4B00959D73 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EF2D69F02C0851C000959D73 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				EF2D6A002C085E2A00959D73 /* CustomTextField.swift */,
+				EF2D6A022C08619000959D73 /* PlaceholderView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		EF2D69F12C0851D600959D73 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				EF2D69EE2C084F4A00959D73 /* FontStyles.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		EF2D69FA2C08548E00959D73 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EF2D69DA2C073D4800959D73 /* ContentView.swift */,
+				EF2D69E62C08438600959D73 /* MainView.swift */,
+				EF2D69FE2C085DAA00959D73 /* AviaView.swift */,
+				EF2D6A042C0861D000959D73 /* ModalSearchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EF2D69FB2C0857EF00959D73 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				EF2D69FC2C08580500959D73 /* Coordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +190,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF2D6A012C085E2A00959D73 /* CustomTextField.swift in Sources */,
 				EF2D69DB2C073D4800959D73 /* ContentView.swift in Sources */,
+				EF2D69FF2C085DAA00959D73 /* AviaView.swift in Sources */,
+				EF2D69E72C08438600959D73 /* MainView.swift in Sources */,
+				EF2D69FD2C08580500959D73 /* Coordinator.swift in Sources */,
+				EF2D69EF2C084F4A00959D73 /* FontStyles.swift in Sources */,
+				EF2D6A032C08619000959D73 /* PlaceholderView.swift in Sources */,
+				EF2D6A052C0861D000959D73 /* ModalSearchView.swift in Sources */,
 				EF2D69D92C073D4800959D73 /* EffectiveMobileTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
