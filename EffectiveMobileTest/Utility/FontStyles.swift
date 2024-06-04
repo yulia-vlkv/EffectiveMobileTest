@@ -8,28 +8,36 @@
 
 import SwiftUI
 
-
-struct FontStyles {
-    struct SFProDisplay {
-        static func semibold(size: CGFloat) -> Font {
-            return Font.custom("SFProDisplay-Semibold", size: size)
-        }
-
-        static func medium(size: CGFloat) -> Font {
-            return Font.custom("SFProDisplay-Medium", size: size)
-        }
-
-        static func regular(size: CGFloat) -> Font {
-            return Font.custom("SFProDisplay-Regular", size: size)
-        }
+extension Font {
+    static func title1() -> Font {
+        .system(size: 22, weight: .semibold)
     }
 
-    static let title1 = SFProDisplay.semibold(size: 22)
-    static let title2 = SFProDisplay.semibold(size: 20)
-    static let title3 = SFProDisplay.medium(size: 16)
-    static let title4 = SFProDisplay.regular(size: 14)
-    static let text1 = SFProDisplay.regular(size: 16)
-    static let text2 = SFProDisplay.semibold(size: 14)
-    static let buttonText1 = SFProDisplay.regular(size: 16)
-    static let tabText = SFProDisplay.regular(size: 10)
+    static func title2() -> Font {
+        .system(size: 20, weight: .semibold)
+    }
+
+    static func title3() -> Font {
+        .system(size: 16, weight: .medium)
+    }
+
+    static func title4() -> Font {
+        .system(size: 14, weight: .regular)
+    }
+
+    static func text1() -> Font {
+        .system(size: 16, weight: .regular)
+    }
+
+    static func text2() -> Font {
+        .system(size: 14, weight: .semibold)
+    }
+
+    static func buttonText1() -> Font {
+        .system(size: 16, weight: .semibold)
+    }
+
+    static func tabText() -> Font {
+        .system(size: 10, weight: .regular)
+    }
 }

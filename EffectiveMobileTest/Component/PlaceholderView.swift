@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct PlaceholderView: View {
-    let title: String
-
+    var title: String
+    
     var body: some View {
-        Text(title)
-            .font(.largeTitle)
-            .foregroundColor(.white)
+        VStack {
+            Spacer()
+            Text(title)
+                .font(.title)
+                .foregroundColor(.white)
+            Spacer()
+        }
+        .frame(maxWidth: .infinity)
+        .background(Color.black.edgesIgnoringSafeArea(.all))
     }
 }
 

@@ -14,48 +14,78 @@ struct ModalSearchView: View {
 
     var body: some View {
         VStack {
-            TextField("Куда - Турция", text: $destination)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-                .overlay(
-                    HStack {
-                        Spacer()
-                        if !destination.isEmpty {
-                            Button(action: {
-                                destination = ""
-                            }) {
-                                Image(systemName: "xmark.circle.fill")
-                                    .foregroundColor(.gray)
-                                    .padding()
+            HStack {
+                TextField("Куда - Турция", text: $destination)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
+                    .overlay(
+                        HStack {
+                            Spacer()
+                            if !destination.isEmpty {
+                                Button(action: {
+                                    destination = ""
+                                }) {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .foregroundColor(.gray)
+                                        .padding(.trailing, 8)
+                                }
                             }
                         }
+                    )
+                    .padding(.horizontal)
+                
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Готово")
+                        .foregroundColor(.blue)
+                }
+                .padding(.trailing)
+            }
+
+            ScrollView {
+                VStack(alignment: .leading) {
+                    HStack {
+                        SearchOptionButton(title: "Сложный маршрут", color: .customGreen) {
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                        SearchOptionButton(title: "Куда угодно", color: .customBlue) {
+                            destination = "Куда угодно"
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                        SearchOptionButton(title: "Выходные", color: .customBlue) {
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                        SearchOptionButton(title: "Горящие билеты", color: .customRed) {
+                            presentationMode.wrappedValue.dismiss()
+                        }
                     }
-                )
-                .padding()
-
-            HStack {
-                SearchOptionButton(title: "Сложный маршрут", color: .customGreen, action: {
-                    presentationMode.wrappedValue.dismiss()
-                })
-                SearchOptionButton(title: "Куда угодно", color: .customBlue, action: {
-                    destination = "Куда угодно"
-                })
-                SearchOptionButton(title: "Выходные", color: .customBlue, action: {
-                    presentationMode.wrappedValue.dismiss()
-                })
-                SearchOptionButton(title: "Горящие билеты", color: .customRed, action: {
-                    presentationMode.wrappedValue.dismiss()
-                })
+                    .padding(.horizontal)
+                    
+                    VStack(alignment: .leading) {
+                        Text("Рекомендации")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding(.horizontal)
+                        
+                        RecommendationButton(title: "Стамбул") {
+                            destination = "Стамбул"
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                        RecommendationButton(title: "Сочи") {
+                            destination = "Сочи"
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                        RecommendationButton(title: "Пхукет") {
+                            destination = "Пхукет"
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    }
+                    .padding(.horizontal)
+                }
             }
-            .padding()
-
-            List {
-                SearchSuggestion(title: "Стамбул", subtitle: "Популярное направление", imageName: "istanbul")
-                SearchSuggestion(title: "Сочи", subtitle: "Популярное направление", imageName: "sochi")
-                SearchSuggestion(title: "Пхукет", subtitle: "Популярное направление", imageName: "phuket")
-            }
-            .background(Color.black)
+            .padding(.top)
         }
         .background(Color.black.edgesIgnoringSafeArea(.all))
     }
@@ -68,48 +98,31 @@ struct SearchOptionButton: View {
 
     var body: some View {
         Button(action: action) {
-            VStack {
-                Circle()
-                    .fill(color)
-                    .frame(width: 50, height: 50)
-                    .overlay(
-                        Image(systemName: "plus.circle.fill")
-                            .foregroundColor(.white)
-                            .font(.title)
-                    )
-                Text(title)
-                    .font(.footnote)
-                    .foregroundColor(.white)
-            }
+            Text(title)
+                .foregroundColor(.white)
+                .padding()
+                .background(color)
+                .cornerRadius(10)
         }
-        .padding()
+        .padding(.horizontal, 2)
     }
 }
 
-struct SearchSuggestion: View {
+struct RecommendationButton: View {
     var title: String
-    var subtitle: String
-    var imageName: String
+    var action: () -> Void
 
     var body: some View {
-        HStack {
-            Image(imageName)
-                .resizable()
-                .frame(width: 50, height: 50)
-                .clipShape(RoundedRectangle(cornerRadius: 8))
-            VStack(alignment: .leading) {
+        Button(action: action) {
+            HStack {
                 Text(title)
-                    .font(.headline)
                     .foregroundColor(.white)
-                Text(subtitle)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(10)
+                Spacer()
             }
-            Spacer()
         }
-        .padding()
-        .background(Color.gray.opacity(0.2))
-        .cornerRadius(8)
     }
 }
 

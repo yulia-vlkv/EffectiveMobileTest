@@ -7,60 +7,43 @@
 
 import SwiftUI
 
-struct MenuBarButton: View {
-    var tab: Coordinator.Page
-    var isActiveTab: Bool
-    var action: () -> Void
-
+struct TabBarButton: View {
+    @EnvironmentObject var coordinator: Coordinator
+    var title: String
+    var iconName: String
+    var tab: Coordinator.Tab
+    
     var body: some View {
-        Button(action: action) {
+        Button(action: {
+            coordinator.selectedTab = tab
+            switch tab {
+            case .avia:
+                coordinator.showAviaSearch()
+            case .hotels:
+                coordinator.showPlaceholder(title: "Отели")
+            case .shorterPath:
+                coordinator.showPlaceholder(title: "Короче")
+            case .subscriptions:
+                coordinator.showPlaceholder(title: "Подписки")
+            case .profile:
+                coordinator.showPlaceholder(title: "Профиль")
+            }
+        }) {
             VStack(spacing: 4) {
                 Image(iconName)
-                    .font(.system(size: 20))
-                    .foregroundColor(isActiveTab ? Color.blue : Color.gray)
-                Text(tabTitle)
-                    .font(FontStyles.tabText)
-                    .foregroundColor(isActiveTab ? Color.blue : Color.gray)
+                    .font(.tabText())
+                Text(title)
+                    .font(.tabText())
                     .lineLimit(1)
-                    .truncationMode(.tail)
             }
+            .padding(.vertical, 8)
+            .foregroundColor(coordinator.selectedTab == tab ? .customBlue: .customGrey6)
             .frame(maxWidth: .infinity)
-        }
-    }
-    
-    private var iconName: String {
-        switch tab {
-        case .avia:
-            return "avia"
-        case .hotels:
-            return "hotel"
-        case .koroche:
-            return "pin"
-        case .subscriptions:
-            return "subscription"
-        case .profile:
-            return "profile"
-        }
-    }
-    
-    private var tabTitle: String {
-        switch tab {
-        case .avia:
-            return "Авиабилеты"
-        case .hotels:
-            return "Отели"
-        case .koroche:
-            return "Короче"
-        case .subscriptions:
-            return "Подписки"
-        case .profile:
-            return "Профиль"
         }
     }
 }
 
 #Preview {
-    MenuBarButton(tab: .avia, isActiveTab: true) {
-        // action
-    }
+    TabBarButton(title: "Авиабилеты", iconName: "avia", tab: .avia)
+        .environmentObject(Coordinator())
 }

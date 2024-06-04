@@ -8,46 +8,64 @@
 import SwiftUI
 
 struct CustomTextField: View {
-    var placeholder: String
-    @Binding var text: String
-
+    var placeholderDeparture: String
+    var placeholderDestination: String
+    @Binding var textDeparture: String
+    @Binding var textDestination: String
+    var onDestinationTap: () -> Void
+    
     var body: some View {
-        TextField(placeholder, text: $text)
-            .padding()
-            .background(Color.gray.opacity(0.2))
-            .cornerRadius(8)
-            .foregroundColor(.white)
-            .keyboardType(.default)
-            .disableAutocorrection(true)
-            .textInputAutocapitalization(.never)
-            .onChange(of: text) { newValue in
-                let filtered = newValue.filter { $0.isCyrillic }
-                if filtered != newValue {
-                    text = filtered
+        ZStack {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color.customGrey3)
+                .frame(height: 90)
+                .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
+            
+            HStack {
+                Image("magnifyingglass")
+                    .foregroundColor(.customGrey5)
+                    .padding(.leading, 10)
+                
+                VStack(alignment: .leading) {
+                    TextField("",
+                              text: $textDeparture,
+                              prompt: Text(placeholderDeparture)
+                        .font(.buttonText1())
+                        .foregroundColor(.customGrey5)
+                    )
+                    .foregroundColor(.customWhite)
+                    .padding(.leading, 10)
+                    .font(.buttonText1())
+                    .onChange(of: textDeparture) { newValue in
+                        textDeparture = newValue.filter { "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя ".contains($0) }
+                    }
+                    
+                    Divider()
+                        .background(Color.customGrey5)
+                    
+                    TextField("",
+                              text: $textDestination,
+                              prompt: Text(placeholderDestination)
+                        .font(.buttonText1())
+                        .foregroundColor(.customGrey5)
+                    )
+                    .foregroundColor(.customWhite)
+                    .padding(.leading, 10)
+                    .font(.buttonText1())
+                    .onTapGesture {
+                        onDestinationTap()
+                    }
+                    .onChange(of: textDeparture) { newValue in
+                        textDeparture = newValue.filter { "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя ".contains($0) }
+                    }
                 }
             }
-    }
-}
-
-extension Character {
-    var isCyrillic: Bool {
-        return ("А"..."я").contains(self) || self == "ё" || self == "Ё"
-    }
-}
-
-struct CustomTextField_Previews: PreviewProvider {
-    static var previews: some View {
-        PreviewWrapper()
-    }
-
-    struct PreviewWrapper: View {
-        @State private var text: String = "Минск"
-
-        var body: some View {
-            CustomTextField(placeholder: "Откуда - Москва", text: $text)
-                .previewLayout(.sizeThatFits)
-                .padding()
-                .background(Color.black)
+            .padding(.horizontal, 10)
         }
     }
+}
+
+#Preview {
+    AviaView()
+        .environmentObject(Coordinator())
 }

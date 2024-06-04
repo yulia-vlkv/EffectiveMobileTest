@@ -11,20 +11,21 @@
 		EF2D69DB2C073D4800959D73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D69DA2C073D4800959D73 /* ContentView.swift */; };
 		EF2D69DD2C073D4B00959D73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2D69DC2C073D4B00959D73 /* Assets.xcassets */; };
 		EF2D69E02C073D4B00959D73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2D69DF2C073D4B00959D73 /* Preview Assets.xcassets */; };
-		EF2D69E72C08438600959D73 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D69E62C08438600959D73 /* MainView.swift */; };
 		EF2D69EF2C084F4A00959D73 /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D69EE2C084F4A00959D73 /* FontStyles.swift */; };
 		EF2D69FD2C08580500959D73 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D69FC2C08580500959D73 /* Coordinator.swift */; };
 		EF2D69FF2C085DAA00959D73 /* AviaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D69FE2C085DAA00959D73 /* AviaView.swift */; };
 		EF2D6A012C085E2A00959D73 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D6A002C085E2A00959D73 /* CustomTextField.swift */; };
 		EF2D6A032C08619000959D73 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D6A022C08619000959D73 /* PlaceholderView.swift */; };
 		EF2D6A052C0861D000959D73 /* ModalSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D6A042C0861D000959D73 /* ModalSearchView.swift */; };
-		EF2D6A072C09A4A200959D73 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D6A062C09A4A200959D73 /* MenuBarView.swift */; };
+		EF2D6A072C09A4A200959D73 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D6A062C09A4A200959D73 /* TabBar.swift */; };
 		EF2D6A092C09A4C300959D73 /* MenuBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D6A082C09A4C300959D73 /* MenuBarButton.swift */; };
 		EF2D6A0C2C09AC0800959D73 /* MusicCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D6A0B2C09AC0800959D73 /* MusicCardModel.swift */; };
 		EF2D6A0E2C09AC3C00959D73 /* TicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D6A0D2C09AC3C00959D73 /* TicketModel.swift */; };
 		EF2D6A102C09AC5D00959D73 /* TicketOfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D6A0F2C09AC5D00959D73 /* TicketOfferModel.swift */; };
 		EF2D6A342C0C355C00959D73 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D6A332C0C355C00959D73 /* NetworkService.swift */; };
 		EF2D6A362C0C3D2C00959D73 /* MusicCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D6A352C0C3D2C00959D73 /* MusicCardView.swift */; };
+		EF2D6A382C0DDC6A00959D73 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D6A372C0DDC6A00959D73 /* MainView.swift */; };
+		EF2D6A3A2C0DE05D00959D73 /* TicketsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D6A392C0DE05D00959D73 /* TicketsListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,20 +34,21 @@
 		EF2D69DA2C073D4800959D73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF2D69DC2C073D4B00959D73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF2D69DF2C073D4B00959D73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EF2D69E62C08438600959D73 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EF2D69EE2C084F4A00959D73 /* FontStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyles.swift; sourceTree = "<group>"; };
 		EF2D69FC2C08580500959D73 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		EF2D69FE2C085DAA00959D73 /* AviaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AviaView.swift; sourceTree = "<group>"; };
 		EF2D6A002C085E2A00959D73 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		EF2D6A022C08619000959D73 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		EF2D6A042C0861D000959D73 /* ModalSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSearchView.swift; sourceTree = "<group>"; };
-		EF2D6A062C09A4A200959D73 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		EF2D6A062C09A4A200959D73 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		EF2D6A082C09A4C300959D73 /* MenuBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarButton.swift; sourceTree = "<group>"; };
 		EF2D6A0B2C09AC0800959D73 /* MusicCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCardModel.swift; sourceTree = "<group>"; };
 		EF2D6A0D2C09AC3C00959D73 /* TicketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketModel.swift; sourceTree = "<group>"; };
 		EF2D6A0F2C09AC5D00959D73 /* TicketOfferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketOfferModel.swift; sourceTree = "<group>"; };
 		EF2D6A332C0C355C00959D73 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		EF2D6A352C0C3D2C00959D73 /* MusicCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCardView.swift; sourceTree = "<group>"; };
+		EF2D6A372C0DDC6A00959D73 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		EF2D6A392C0DE05D00959D73 /* TicketsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,10 +126,11 @@
 			isa = PBXGroup;
 			children = (
 				EF2D69DA2C073D4800959D73 /* ContentView.swift */,
-				EF2D69E62C08438600959D73 /* MainView.swift */,
 				EF2D69FE2C085DAA00959D73 /* AviaView.swift */,
+				EF2D6A372C0DDC6A00959D73 /* MainView.swift */,
 				EF2D6A042C0861D000959D73 /* ModalSearchView.swift */,
-				EF2D6A062C09A4A200959D73 /* MenuBarView.swift */,
+				EF2D6A062C09A4A200959D73 /* TabBar.swift */,
+				EF2D6A392C0DE05D00959D73 /* TicketsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -241,16 +244,17 @@
 				EF2D69DB2C073D4800959D73 /* ContentView.swift in Sources */,
 				EF2D6A362C0C3D2C00959D73 /* MusicCardView.swift in Sources */,
 				EF2D69FF2C085DAA00959D73 /* AviaView.swift in Sources */,
-				EF2D69E72C08438600959D73 /* MainView.swift in Sources */,
+				EF2D6A3A2C0DE05D00959D73 /* TicketsListView.swift in Sources */,
 				EF2D69FD2C08580500959D73 /* Coordinator.swift in Sources */,
 				EF2D69EF2C084F4A00959D73 /* FontStyles.swift in Sources */,
 				EF2D6A0C2C09AC0800959D73 /* MusicCardModel.swift in Sources */,
+				EF2D6A382C0DDC6A00959D73 /* MainView.swift in Sources */,
 				EF2D6A0E2C09AC3C00959D73 /* TicketModel.swift in Sources */,
 				EF2D6A342C0C355C00959D73 /* NetworkService.swift in Sources */,
 				EF2D6A032C08619000959D73 /* PlaceholderView.swift in Sources */,
 				EF2D6A052C0861D000959D73 /* ModalSearchView.swift in Sources */,
 				EF2D69D92C073D4800959D73 /* EffectiveMobileTestApp.swift in Sources */,
-				EF2D6A072C09A4A200959D73 /* MenuBarView.swift in Sources */,
+				EF2D6A072C09A4A200959D73 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
