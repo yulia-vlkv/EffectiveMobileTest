@@ -12,10 +12,10 @@ struct AviaView: View {
     @State private var musicCards: [MusicCardModel] = []
     @State private var isLoading = true
     @State private var errorMessage: String?
-    @State private var destination: String = ""
     @State private var departure: String = UserDefaults.standard.string(forKey: "departure") ?? ""
+    @State private var destination: String = ""
     @State private var showingModal = false
-    
+
     var body: some View {
         VStack {
             ScrollView {
@@ -28,21 +28,20 @@ struct AviaView: View {
                         .padding(.top, 50)
                         .padding(.horizontal, 30)
                     
-                    CustomTextField(
-                        placeholderDeparture: "Откуда - Москва",
-                        placeholderDestination: "Куда - Турция",
-                        textDeparture: $departure,
-                        textDestination: $destination,
-                        onDestinationTap: {
-                            self.showingModal = true
-                        }
-                    )
-                    .onDisappear {
-                        UserDefaults.standard.set(departure, forKey: "departure")
+                    Button(action: {
+                        self.showingModal = true
+                    }) {
+                        CustomTextField(
+                            placeholderDeparture: "Откуда - Москва",
+                            placeholderDestination: "Куда - Турция",
+                            textDeparture: $departure,
+                            textDestination: $destination,
+                            isModal: false
+                        )
+                        .padding()
+                        .background(.customGrey2)
+                        .cornerRadius(10)
                     }
-                    .padding()
-                    .background(.customGrey2)
-                    .cornerRadius(10)
                     
                     Text("Музыкально отлететь")
                         .font(.title1())
@@ -72,8 +71,16 @@ struct AviaView: View {
             TabBar()
                 .environmentObject(coordinator)
         }
+        .sheet(isPresented: $showingModal) {
+            ModalSearchView(departure: $departure, destination: $destination)
+                .environmentObject(coordinator)
+        }
         .onAppear {
             fetchMusicCards()
+            UserDefaults.standard.set(departure, forKey: "departure")
+        }
+        .onDisappear {
+            UserDefaults.standard.set(departure, forKey: "departure")
         }
     }
     
@@ -90,6 +97,10 @@ struct AviaView: View {
             }
         }
     }
+}
+
+#Preview {
+    AviaView()
 }
 
 #Preview {
