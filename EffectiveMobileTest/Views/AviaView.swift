@@ -28,19 +28,26 @@ struct AviaView: View {
                         .padding(.top, 50)
                         .padding(.horizontal, 30)
                     
-                    Button(action: {
-                        self.showingModal = true
-                    }) {
-                        CustomTextField(
-                            placeholderDeparture: "Откуда - Москва",
-                            placeholderDestination: "Куда - Турция",
-                            textDeparture: $departure,
-                            textDestination: $destination,
-                            isModal: false
-                        )
-                        .padding()
-                        .background(.customGrey2)
-                        .cornerRadius(10)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 16)
+                            .fill(Color.customGrey3)
+                            .frame(height: 122)
+                            .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
+                        
+                        Button(action: {
+                            self.showingModal = true
+                        }) {
+                            CustomTextField(
+                                placeholderDeparture: "Откуда - Москва",
+                                placeholderDestination: "Куда - Турция",
+                                textDeparture: $departure,
+                                textDestination: $destination,
+                                isModal: false
+                            )
+                            .background(.customGrey2)
+                            .cornerRadius(10)
+                            .padding()
+                        }
                     }
                     
                     Text("Музыкально отлететь")
