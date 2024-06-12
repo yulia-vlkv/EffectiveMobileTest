@@ -68,7 +68,7 @@ struct CustomTextField: View {
                     }
                     Divider()
                         .frame(height: 1)
-                        .background(Color.customGrey5)
+                        .background(.customGrey5)
                         .padding(.horizontal, 10)
                     HStack {
                         TextField("",
@@ -118,7 +118,7 @@ struct CustomTextField: View {
                 }
                 Divider()
                     .frame(height: 1)
-                    .background(Color.customGrey5)
+                    .background(.customGrey5)
                     .padding(.horizontal, 10)
                 HStack {
                     Image(systemName: "magnifyingglass")

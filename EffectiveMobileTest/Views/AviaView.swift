@@ -32,7 +32,12 @@ struct AviaView: View {
                         RoundedRectangle(cornerRadius: 16)
                             .fill(Color.customGrey3)
                             .frame(height: 122)
+                        
+                        RoundedRectangle(cornerRadius: 16)
+                            .fill(Color.customGrey2)
+                            .frame(height: 90)
                             .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
+                            .padding()
                         
                         Button(action: {
                             self.showingModal = true
@@ -44,8 +49,6 @@ struct AviaView: View {
                                 textDestination: $destination,
                                 isModal: false
                             )
-                            .background(.customGrey2)
-                            .cornerRadius(10)
                             .padding()
                         }
                     }
@@ -81,6 +84,7 @@ struct AviaView: View {
         .sheet(isPresented: $showingModal) {
             ModalSearchView(departure: $departure, destination: $destination)
                 .environmentObject(coordinator)
+                .presentationDragIndicator(.visible)
         }
         .onAppear {
             fetchMusicCards()
@@ -104,10 +108,6 @@ struct AviaView: View {
             }
         }
     }
-}
-
-#Preview {
-    AviaView()
 }
 
 #Preview {
